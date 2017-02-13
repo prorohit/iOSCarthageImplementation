@@ -1,0 +1,67 @@
+Carthage Installation 
+
+	1.1) We can install carthage from one of the following 2 recomended mothods.
+    There are multiple options for installing Carthage:
+
+    Installer: Download and run the Carthage.pkg file for the latest release, then follow the on-screen instructions.
+    
+    Link to download the Carthage.pkg file:
+    https://github.com/Carthage/Carthage/releases/tag/0.18.1
+
+
+    Homebrew: You can use Homebrew and install the carthage tool on your system simply by running brew update and brew install carthage. (note: if you previously installed the binary version of Carthage, you should delete /Library/Frameworks/CarthageKit.framework).
+
+       Steps to Install:
+    1.2) Go to Terminal
+    1.3) Run the following command
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    1.4) brew update
+
+    1.5) brew install carthage
+
+    2) Once Carthage will get installed on to the machine then, we can check its version by running following command.
+    		carthage version
+
+    3) To manage the Dependecies using Carthage, we need to follow the following instructions.
+
+    4) Go to the project folder from the terminal by using command 
+    		cd "path of project"
+
+    5) Now run following command
+
+    	touch Cartfile 
+    	Note :Here "C" is capital in Cartfile.
+
+    6) Now if you see your respected Project Folder, you will find a text file of name "Cartfile" is available.
+
+    7) Now suppose, we want to implement the Depencency name "ReachabilitySwift", so when we will go to the correponding github link of the same library, then we will be provided with the link for the Carthage implementation as follows:
+
+   			 To install Reachability.swift for Swift 2.3 using Carthage, include the following in your Cartfile
+
+			github "ashleymills/Reachability.swift" ~> 2.3
+
+	8) We have to copy this, link and paste it to the Cartfile and save it, that we just have generated in above steps.
+
+	9) Now run following command in terminal
+
+	 		 carthage update --platform iOS 
+
+	10) It will install the dependency into our project.
+
+	11) Now we will find 3 new entries in our project folder
+
+		1. Cartfile
+		2. Cartfile.resolved
+		3. Carthage [Folder]
+			3.1 Build
+			3.2 Checkouts
+
+	12) Here the most imortant folder is Carthage->Build : In this folder we will find the framework, which are downloaded to integrate into our project.
+
+	13) Now just select the framework from the Build folder and drag it to your project.
+
+	14) After that we are ready to use the third party framework. But sometimes, frameword not got loaded properly, so we have to make one entry in the Build Phases with the name of Copy Files and add our project there. 	
+
+
+
